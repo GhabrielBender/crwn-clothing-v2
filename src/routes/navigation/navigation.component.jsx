@@ -14,7 +14,7 @@ import "./navigation.styles.scss";
 
 const Navigation = () => {
   const { currentUser } = useContext(UserContext);
-  const { isCartOpen, setCartOpen } = useContext(CartContext);
+  const { isCartOpen, setIsCartOpen } = useContext(CartContext);
 
   return (
     <Fragment>
@@ -37,11 +37,7 @@ const Navigation = () => {
             </Link>
           )}
 
-          <CartIcon
-            onClick={() => {
-              setCartOpen(!isCartOpen);
-            }}
-          />
+          <CartIcon onClick={() => setIsCartOpen(!isCartOpen)} />
         </div>
         {isCartOpen && <CartDropdown />}
       </div>
